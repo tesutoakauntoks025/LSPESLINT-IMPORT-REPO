@@ -1,3 +1,5 @@
+const generateZones = require('./generatezone.js');
+
 module.exports = {
   env: {
     browser: true,
@@ -34,6 +36,12 @@ module.exports = {
         varsIgnorePattern: '^_',
         args: 'after-used',
         argsIgnorePattern: '^_',
+      },
+    ],
+    'import/no-restricted-paths': [
+      'warn',
+      {
+        zones: [...generateZones()],
       },
     ],
     //#endregion  //*======== Unused Import ===========
