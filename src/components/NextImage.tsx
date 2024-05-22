@@ -36,6 +36,10 @@ export default function NextImage({
   );
   const widthIsSet = className?.includes('w-') ?? false;
 
+  React.useEffect(() => {
+    console.log(status);
+  }, []);
+
   return (
     <figure
       style={!widthIsSet ? { width: `${width}px` } : undefined}
